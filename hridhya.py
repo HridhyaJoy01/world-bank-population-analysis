@@ -318,8 +318,7 @@ def predict_future_values(energy_data, countries, indicators, start_year, end_ye
 
 
 def main():
-    df_years, df_countries = load_and_process_data(
-        r"C:\Users\hridh\Documents\Python Scripts\spyder\ads 1 ass 3\worldbankdata.csv")
+    df_years, df_countries = load_and_process_data("worldbankdata.csv")
 
     selected_indicators = [
         'Population, total', 'Urban population growth (annual %)']
@@ -338,7 +337,7 @@ def main():
     print(cluster_centers)
     visualize_clustered_data(normalized_data, cluster_labels, cluster_centers)
 
-    predict_future_values(r"C:\Users\hridh\Documents\Python Scripts\spyder\ads 1 ass 3\worldbankdata.csv", [
+    predict_future_values("worldbankdata.csv", [
                           'China', 'Germany', 'United States', 'India', 'United Kingdom'], ['Population growth (annual %)'], 1980, 2014)
 
     visualize_correlation_heatmap(selected_data, size=8)
